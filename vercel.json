@@ -1,12 +1,6 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "/api/arise.js",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
-    { "src": "/(.*)", "dest": "/api/arise.js" }
+    { "src": "/api/(.*)", "dest": "/api/index.php" }
   ]
 }
