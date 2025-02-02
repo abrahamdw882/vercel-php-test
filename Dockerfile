@@ -1,18 +1,6 @@
-# Use a base image with PHP
-FROM php:7.4-cli
+FROM php:8.1-apache
 
-# Install necessary dependencies
-RUN apt-get update && apt-get install -y \
-    curl \
-    git \
-    unzip \
-    && rm -rf /var/lib/apt/lists/*
+COPY . /var/www/html
 
-# Set the working directory inside the container
-WORKDIR /app
-
-# Copy PHP files to the container
-COPY ./api /app/api
-
-# Set entrypoint to PHP CLI
-CMD ["php", "/app/api/php-api.js"]
+EXPOSE 80
+CMD ["apache2-foreground"]
