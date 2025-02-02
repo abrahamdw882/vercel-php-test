@@ -1,7 +1,0 @@
-{
-  "name": "php-on-vercel",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "node api/arise.js"
-  }
-}
